@@ -39,37 +39,51 @@ Would return: `{'a'=>'A','c'=>'C','B'=>'D'}`
 pt\_getparamdefault
 -------------------
 
-Takes a resource reference and name of the parameter and returns default value
-of resource's parameter (or empty string if default is not set).
+Takes a type or resource reference and name of the parameter and returns
+default value of parameter for that type/resource (or empty string if default
+is not set).
 
 *Examples:*
 
     package { 'apache2': provider => apt }
-    $prov = pt_getparamdefault(Package['apache2'], provider)
+    pt_getparamdefault(Package['apache2'], provider)
 
-Would result with `$prov == ''` (default provider was not defined).
+Would return '' (default provider was not defined).
 
     Package { provider => aptitude }
 
     node example.com {
       package { 'apache2': provider => apt }
-      $prov = pt_getparamdefault(Package['apache2'], provider)
+      pt_getparamdefault(Package['apache2'], provider)
     }
 
-Would result with `$prov == 'aptitude'`.
+Would return 'aptitude'.
 
     Package { provider => aptitude }
 
     node example.com {
       Package { provider => apt }
       package { 'apache2': }
-      $prov = pt_getparamdefault(Package['apache2'], provider)
+      pt_getparamdefault(Package['apache2'], provider)
     }
 
-Would result with `$prov == 'apt'`. 
+Would return 'apt'.
+
+    Package { provider => aptitude }
+
+    node example.com {
+      Package { provider => apt }
+      pt_getparamdefault(Package, provider)
+    }
+
+Would return 'apt'.
 
     pt_getparamdefault(Foo['bar'], geez)
 
-Would not compile (resource `Foo[bar]` does not exist)
+Would not compile (resource Foo[bar] does not exist)
+
+    pt_getparamdefault(Foo, geez)
+
+Would not compile (type Foo does not exist)
 
 - *Type*: rvalue

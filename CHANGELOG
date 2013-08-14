@@ -1,2 +1,4 @@
 2013-07-14 Pawel Tomulik <ptomulik@meil.pw.edu.pl>
+  * pt_getparamdefault() now supports also types
+2013-07-14 Pawel Tomulik <ptomulik@meil.pw.edu.pl>
   * initial commit
