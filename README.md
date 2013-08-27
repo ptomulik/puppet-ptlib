@@ -1,12 +1,10 @@
 # ptomulik-ptlib #
 
-[![Build Status](https://travis-ci.org/ptomulik/ptomulik-ptlib.png?branch=master)](https://travis-ci.org/ptomulik/ptomulik-ptlib)
+[![Build Status](https://travis-ci.org/ptomulik/puppet-ptlib.png?branch=master)](https://travis-ci.org/ptomulik/puppet-ptlib)
 
-This module provides a utility library of functions for developing Puppet
-Modules. 
+Utility functions for puppet modules' developers. 
 
 # Functions #
-
 
 pt\_delete\_undef\_values
 -------------------------
