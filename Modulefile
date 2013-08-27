@@ -1,5 +1,5 @@
 name    'ptomulik-ptlib'
-version '0.1.1'
+version '0.1.2'
 source 'git://github.com/ptomulik/puppet-ptlib.git'
 author 'ptomulik'
 license 'Apache License, Version 2.0'
